@@ -1,43 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Delete Chatty Account</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delete Account - Chatty</title>
+
 <style>
+
 body{
-font-family: Arial;
-max-width:800px;
-margin:auto;
-padding:40px;
-line-height:1.6;
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+background:linear-gradient(135deg,#B83AD2,#B83999,#0CA7E1);
+min-height:100vh;
+color:white;
 }
+
+/* HEADER */
+
+.header{
+padding:25px 40px;
+font-size:28px;
+font-weight:600;
+}
+
+/* CENTER */
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px 20px;
+}
+
+/* CARD */
+
+.card{
+background:white;
+color:#333;
+width:520px;
+padding:40px;
+border-radius:16px;
+box-shadow:0 20px 60px rgba(0,0,0,0.25);
+}
+
+.card h2{
+margin-top:0;
+color:#B83AD2;
+}
+
+/* DESCRIPTION */
+
+.description{
+color:#666;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+/* LABEL */
+
+.label{
+color:#0CA7E1;
+font-weight:600;
+margin-bottom:8px;
+}
+
+/* INPUTS */
+
+input{
+width:100%;
+padding:13px;
+margin-top:8px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:14px;
+}
+
+/* CHECKBOX */
+
+.checkbox{
+display:flex;
+align-items:flex-start;
+gap:8px;
+font-size:14px;
+margin-bottom:20px;
+color:#444;
+}
+
+/* DELETE BUTTON */
+
+.delete-btn{
+width:100%;
+padding:14px;
+background:linear-gradient(90deg,#B83AD2,#B83999);
+border:none;
+border-radius:8px;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.delete-btn:hover{
+opacity:0.9;
+}
+
+/* HELP SECTION */
+
+.help{
+text-align:center;
+margin-top:50px;
+}
+
+.help h3{
+font-size:26px;
+}
+
+.email{
+color:#0CA7E1;
+margin-top:10px;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+margin-top:40px;
+color:#eee;
+font-size:14px;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<h1>Delete Your Chatty Account</h1>
+<div class="header">
+Chatty
+</div>
 
-<p>Users can delete their account and associated data directly from the Chatty mobile application.</p>
+<div class="container">
 
-<h2>Steps to Delete Account</h2>
+<div class="card">
 
-<ol>
-<li>Open the Chatty app</li>
-<li>Go to Settings</li>
-<li>Select Delete Account</li>
-<li>Confirm deletion</li>
-</ol>
+<h2>Delete Your Account</h2>
 
-<h2>Data Deletion</h2>
+<p class="description">
+Deleting your account will permanently remove all your data and associated
+records from Chatty. You will lose access to all services connected to your account.
+</p>
 
-<p>Once the account is deleted, all associated user data including messages and account details will be permanently removed from our servers.</p>
+<div class="label">
+Authentication Required
+</div>
 
-<h2>Need Help?</h2>
+<input type="email" placeholder="Enter email">
 
-<p>If you cannot access your account, please contact:</p>
+<input type="password" placeholder="Password">
 
-<p>Email: support@chattyapp.com</p>
+<div class="checkbox">
+<input type="checkbox">
+<span>I understand that deleting my account is permanent and cannot be undone.</span>
+</div>
+
+<button class="delete-btn">
+Delete Account
+</button>
+
+<p style="margin-top:10px;font-size:14px;color:#666;">
+This action cannot be reversed.
+</p>
+
+</div>
+
+</div>
+
+<div class="help">
+
+<h3>Need Help?</h3>
+
+<p>If you have any questions or require assistance please contact support.</p>
+
+<div class="email">
+harisyounus921@gmail.com
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Chatty App
+</div>
 
 </body>
 </html>
