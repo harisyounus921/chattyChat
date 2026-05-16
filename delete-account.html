@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Delete Account - Chatty</title>
+<title>Delete Account - Sceniva AI</title>
 
 <style>
 
@@ -72,6 +72,7 @@ margin-bottom:15px;
 border-radius:8px;
 border:1px solid #ddd;
 font-size:14px;
+box-sizing:border-box;
 }
 
 /* CHECKBOX */
@@ -102,6 +103,11 @@ border-radius:8px;
 color:white;
 font-size:16px;
 cursor:pointer;
+transition:0.3s;
+}
+
+.delete-btn:hover{
+opacity:0.9;
 }
 
 .delete-btn:disabled{
@@ -114,6 +120,7 @@ cursor:not-allowed;
 .help{
 text-align:center;
 margin-top:50px;
+padding:0 20px;
 }
 
 .help h3{
@@ -121,8 +128,9 @@ font-size:26px;
 }
 
 .email{
-color:#0CA7E1;
+color:#ffffff;
 margin-top:10px;
+font-weight:500;
 }
 
 /* FOOTER */
@@ -130,6 +138,7 @@ margin-top:10px;
 .footer{
 text-align:center;
 margin-top:40px;
+padding-bottom:30px;
 color:#eee;
 font-size:14px;
 }
@@ -148,6 +157,7 @@ border-radius:8px;
 opacity:0;
 transition:0.4s;
 font-size:14px;
+z-index:999;
 }
 
 .toast.show{
@@ -169,7 +179,7 @@ background:#e53935;
 <body>
 
 <div class="header">
-Chatty
+Sceniva AI – Image Generator
 </div>
 
 <div class="container">
@@ -179,8 +189,9 @@ Chatty
 <h2>Delete Your Account</h2>
 
 <p class="description">
-Deleting your account will permanently remove all your data and associated
-records from Chatty. You will lose access to all services connected to your account.
+Deleting your account will permanently remove your Sceniva AI account,
+generated content, saved data, and associated records.
+You will lose access to all services connected to your account.
 </p>
 
 <div class="label">
@@ -193,10 +204,12 @@ Authentication Required
 
 <div class="checkbox">
 <input id="confirmCheck" type="checkbox">
-<span>I understand that deleting my account is permanent and cannot be undone.</span>
+<span>
+I understand that deleting my account is permanent and cannot be undone.
+</span>
 </div>
 
-<button id="deleteBtn" class="delete-btn">
+<button id="deleteBtn" class="delete-btn" disabled>
 Delete Account
 </button>
 
@@ -212,16 +225,18 @@ This action cannot be reversed.
 
 <h3>Need Help?</h3>
 
-<p>If you have any questions or require assistance please contact support.</p>
+<p>
+If you have any questions or require assistance, please contact support.
+</p>
 
 <div class="email">
-harisyounus921@gmail.com
+📧 harisyounus921@gmail.com
 </div>
 
 </div>
 
 <div class="footer">
-© 2026 Chatty App
+© 2026 Sceniva AI – Image Generator
 </div>
 
 <div id="toast" class="toast"></div>
@@ -243,12 +258,14 @@ deleteBtn.disabled = !checkbox.checked;
 /* Toast function */
 
 function showToast(message,type){
+
 toast.innerText = message;
 toast.className = "toast show " + type;
 
 setTimeout(()=>{
 toast.className = "toast";
 },3000);
+
 }
 
 /* Delete button click */
@@ -256,18 +273,33 @@ toast.className = "toast";
 deleteBtn.addEventListener("click", () => {
 
 if(!checkbox.checked){
-showToast("Please confirm the checkbox before deleting.", "error");
+
+showToast(
+"Please confirm the checkbox before deleting.",
+"error"
+);
+
 return;
+
 }
 
 if(email.value.trim()=="" || password.value.trim()==""){
-showToast("Please enter email and password.", "error");
+
+showToast(
+"Please enter email and password.",
+"error"
+);
+
 return;
+
 }
 
 /* Simulate success */
 
-showToast("Account deletion request submitted successfully.", "success");
+showToast(
+"Account deletion request submitted successfully.",
+"success"
+);
 
 /* Clear fields */
 
